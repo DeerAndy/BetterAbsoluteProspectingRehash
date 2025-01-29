@@ -84,10 +84,6 @@ namespace BetterProspecting
             int damage = 4;
 
             if  (toolMode == 1) {
-                ProbeDistanceSampleMode(world, byEntity, itemslot, blockSel, (int)EnumProspectingArea.Density, (int)EnumProspectingArea.Ycoords, 0);
-		damage = 3;
-            }
-	    else if (toolMode == 1) {
                 ProbeDistanceSampleMode(world, byEntity, itemslot, blockSel, (int)EnumProspectingArea.ShortDirectionalArea, (int)EnumProspectingArea.Ycoords, 0);
             }
 	    else if (toolMode == 2)
@@ -109,6 +105,10 @@ namespace BetterProspecting
             else if (toolMode == 6)
             {
                  ProbeAreaSampleMode(world, byEntity, itemslot, blockSel, (int)EnumProspectingArea.LargeArea, (int)EnumProspectingArea.Ycoords);
+            }
+	    else
+            {
+                ProbeBlockDensityMode(world, byEntity, itemslot, blockSel);
             }
 
             if (DamagedBy != null && DamagedBy.Contains(EnumItemDamageSource.BlockBreaking))
